@@ -14,7 +14,7 @@
 
 #Config dari prometheus.yml
 
-#my global config
+	#my global config
   
 	global:
     	  scrape_interval:     15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
@@ -26,14 +26,14 @@
     	  external_labels:
      	   monitor: 'docker-monitor'
 
-#Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
+	#Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
   
   	rule_files:
     	  # - "first.rules"
     	  # - "second.rules"
 
-#A scrape configuration containing exactly one endpoint to scrape:
-#Here it's Prometheus itself.
+	#A scrape configuration containing exactly one endpoint to scrape:
+	#Here it's Prometheus itself.
   	
 	scrape_configs:
     	# The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
