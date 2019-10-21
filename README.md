@@ -1,18 +1,18 @@
 # Agar Docker daemon menjadi 'target' dari Prometheus, perlu menentukan metrics-address via daemon.json
 	
-#Lokasi File :
+# Lokasi File :
 	
 	Linux : /etc/docker/daemon.json
 	Windows : C:\ProgramData\docker\config\daemon.json
 
-#Isi dari daemon.json :
+# Isi dari daemon.json :
 	
 	{
 	  "metrics-addr" : "localhost:9323",
 	  "experimental" : true
 	}
 
-#Config dari prometheus.yml
+# Config dari prometheus.yml
 
 	#my global config
   
@@ -52,11 +52,11 @@
       	static_configs:
        	  - targets: ['localhost:9323']
 
-#Lokasi File :
+# Lokasi File :
 
   	Linux : /etc/prometheus/prometheus.yml
 
-#Buat Docker Swarm
+# Buat Docker Swarm
   
   	docker swarm init
   	docker service create --replicas 1 --name my-prometheus \
@@ -64,10 +64,10 @@
     	--publish published=9090,target=9090,protocol=tcp \
     	prom/prometheus
 
-#Setelah selesai cek di 
+# Setelah selesai cek di 
 
 	http://localhost:9090/targets/
 	
-#Jika muncul 'docker' dan statenya up maka berhasil
+# Jika muncul 'docker' dan statenya up maka berhasil
 
-#Happy Monitoring ^^
+# Happy Monitoring ^^
